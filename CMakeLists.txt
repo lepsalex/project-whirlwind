@@ -29,6 +29,8 @@ project(project-whirlwind)
 
 # add third party deps
 add_subdirectory(third-party/raylib-5.5)
+add_subdirectory(third-party/imgui-docking)
+add_subdirectory(third-party/rlImgui)
 
 # MY_SOURCES is defined to be a list of all the source files for my game 
 # DON'T ADD THE SOURCES BY HAND, they are already added with this macro
@@ -84,6 +86,4 @@ endif()
 target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src/")
 
 # Link static libraries
-target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE raylib_static)
-
-
+target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE raylib_static imgui rlImgui)
